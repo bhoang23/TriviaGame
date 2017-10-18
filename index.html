@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Timer Quiz</title>
+<link href ="style.css" rel ="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src = "main.js"></script>
+
+</head>
+
+
+<body>
+
+<h1>This is Brandon's trivia game!</h1>
+
+<form id = "quiz" name = "quiz">
+<div id="show-number"></div>
+<button id="stop">Stop Test Timer</button>
+    <button id="resume">Resume Test Timer</button>
+
+   
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+   
+    <script type="text/javascript">
+
+    alert("You will have 100 seconds to complete this quiz. Good luck!")
+    var number = 100;
+
+    var intervalId;
+
+    
+    $("#stop").on("click", stop);
+
+    
+    $("#resume").on("click", run);
+
+  
+    function run() {
+      intervalId = setInterval(decrement, 1000);
+    }
+
+    function decrement() {
+
+      number--;
+
+     
+      $("#show-number").html("<h2>" + number + "</h2>");
+
+
+   
+      if (number === 0) {
+
+        stop();
+
+        alert("Time Up!");
+      }
+    }
+
+    function stop() {
+
+     
+      clearInterval(intervalId);
+    }
+
+
+    run();
+
+    </script>
+
+
+
+
+<p>What year was SUPREME founded?</p>
+<input type = "radio" id = "mc" name = "question1" value = "1992">1992<br>
+<input type = "radio" id = "mc" name = "question1" value = "1993">1993<br>
+<input type = "radio" id = "mc" name = "question1" value = "1994">1994<br>
+
+<p>What does BAPE stand for?</p>
+<input type = "radio" id = "mc" name = "question2" value = "aBathingApe">A Bathing Ape<br>
+<input type = "radio" id = "mc" name = "question2" value = "aBigApe">A Big Ape<br>
+<input type = "radio" id = "mc" name = "question2" value = "aBigApple">A Big Apple<br>
+
+<p>Who was the creator of Comes des Garcons?</p>
+<input type = "radio" id = "mc" name = "question3" value = "reiKawakubo">Rei Kawakubo<br>
+<input type = "radio" id = "mc" name = "question3" value = "nigo">Nigo<br>
+<input type = "radio" id = "mc" name = "question3" value = "sk8thing">Sk8thing<br>
+
+<input id = "button" type = "button" value = "Done!" onclick = "check();">
+
+</form>
+
+<div id = "after_submit">
+<p id = "messages"></p>
+<p id = "number_correct"></p>
+<img id = "pictures">
+
+</div>
+
+
+</html>
+</body>
+
