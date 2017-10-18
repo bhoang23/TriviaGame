@@ -42,3 +42,7 @@ function check (){
 
   }
 }  
+
+function myfunction() {
+  document.getElementById("quiz").reset();
+}
