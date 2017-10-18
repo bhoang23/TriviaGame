@@ -18,7 +18,7 @@ function check (){
      }
 
   var messages = ["Good Job!", "OK Job", "Good luck next time lol!"];
-  var pictures = ["img/win.gif", "img/meh.jpeg", "img/lose.gif"];
+  var pictures = ["assets/img/win.gif", "assets/img/meh.jpeg", "assets/img/lose.gif"];
 
   var score;
 
@@ -40,8 +40,7 @@ function check (){
   document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
   document.getElementById("pictures").src = pictures[score];
 
-  }
-}  
+  }  
 
 function myfunction() {
   document.getElementById("quiz").reset();
